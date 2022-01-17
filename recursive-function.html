@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursive Function</title>
+  </head>
+  <body>
+    <!-- function yang memanggil dirinya sendiri -->
+    <script>
+      function factorialRecursive(value) {
+        if (value === 1) {
+          return 1;
+        } else {
+          return value * factorialRecursive(value - 1);
+        }
+      }
+      let bil = 5;
+      document.writeln(`<p>Hasil ${bil}! = ${factorialRecursive(bil)}</p>`);
+      bil = 6;
+      document.writeln(`<p>Hasil ${bil}! = ${factorialRecursive(bil)}</p>`);
+
+      function soGood(nilai) {
+        if (nilai === 10) {
+          return 10;
+        } else {
+          return nilai + soGood(nilai + 1);
+        }
+      }
+      num = 1;
+      document.writeln(`<p>Hasil ${num} = ${soGood(num)}</p>`);
+    </script>
+  </body>
+</html>

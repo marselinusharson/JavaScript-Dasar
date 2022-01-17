@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for in</title>
+  </head>
+  <body>
+    <script>
+      const names = {
+        firtName: "Marselinus",
+        middleName: "Harson",
+        lastName: "Rewo",
+      };
+      for (const property in names) {
+        document.writeln(`<p>${property}: ${names[property]}</p>`);
+      }
+
+      const data = ["marsel", "rewo", "harson"];
+      for (const index in data) {
+        document.writeln(`<p>${index}: ${data[index]}</p>`);
+      }
+
+      {
+        const person = {
+          firstName: "Marselinus",
+          middleName: "Harson",
+          lastName: "Rewo",
+        };
+        for (const property in person) {
+          document.writeln(`<p>${property}: ${person[property]}</p>`);
+        }
+      }
+    </script>
+  </body>
+</html>

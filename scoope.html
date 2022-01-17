@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scoope</title>
+  </head>
+  <body>
+    <!-- data dari global scoope dapat diakses dari mana saja -->
+    <!-- data di local scoope hanya bisa diakses di tempat ia dideklarasikan -->
+    <script>
+      //global scoope
+      let counter = 0;
+
+      //global scoope
+      function hitMe() {
+        //local scoope
+        counter++;
+      }
+      hitMe();
+      hitMe();
+      hitMe();
+      document.writeln(counter);
+
+      function first() {
+        //local scoope first
+        let firstVariable = "first";
+        console.info(firstVariable);
+      }
+      function second() {
+        let secondVariable = "second";
+        console.info(secondVariable);
+      }
+      first();
+      second();
+    </script>
+  </body>
+</html>

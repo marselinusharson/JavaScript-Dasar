@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this keyword</title>
+  </head>
+  <body>
+    <script>
+      console.info(this);
+      function sample() {
+        console.info(this);
+      }
+      sample();
+
+      const person = {
+        names: "MARSEL",
+        sayHello: function (kamu) {
+          document.writeln(`<p>Hello ${kamu} nama ku ${this.names}</p>`);
+        },
+      };
+      person.sayHello("anjing");
+      person.sayHello("tai");
+      person.sayHello("Joko");
+    </script>
+  </body>
+</html>

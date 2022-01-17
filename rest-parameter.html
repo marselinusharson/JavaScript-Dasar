@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rest parameter</title>
+  </head>
+  <body>
+    <script>
+      function sum(name, ...data) {
+        let total = 0;
+        for (const item of data) {
+          total += item;
+        }
+        document.writeln(`Total ${name} is ${total}`);
+      }
+
+      sum("Orance", 4, 3, 4, 5, 65, 7, 0, 100, 8);
+      document.writeln("</br>");
+      //sprean syntax
+      sum("Orance", ...[4, 3, 4, 5, 65, 7, 0, 100, 8]);
+      {
+        function sum(nama, ...angka) {
+          let total = 0;
+          for (const item of angka) {
+            total += item;
+          }
+          document.writeln(`<p>total ${nama} adalah ${total}</p>`);
+        }
+        sum("nama", ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+      }
+      {
+        {
+          function sum() {
+            let total = 0;
+            for (const item of arguments) {
+              total += item;
+            }
+            document.writeln(`<p>total ${nama} adalah ${total}</p>`);
+          }
+          sum("nama", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        }
+      }
+    </script>
+  </body>
+</html>

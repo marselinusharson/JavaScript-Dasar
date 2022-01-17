@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+  <title>js object</title>
+
+  <!-- linkbootrsap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+</head>
+<html>
+  <body>
+    <!-- Judul -->
+    <div class="container-fluid mb-1" style="background-color: #522b2b">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+          <h1 class="text-light">Javascript Object</h1>
+        </div>
+      </div>
+    </div>
+    <!-- akhir judul -->
+
+    <div class="container mb-1" style="background-color: #a75c5c">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+          <h3 class="text-light">Penggunaan object sebagai nilai suatu variable</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+          <p class="text-light">
+            menampilkan salah satu value dari properti object: <br />
+            <b> const marselinus = { gender: "pria", height: "167 cm", asal: "Bajawa" };</b><br />maka untuk menampilkan gender dari marselinus saat tombol di klik kita dapat mengaksesnya dengan perintah dan menjalankan suatu function saat event
+            onclick <i><b>objectName.propertyName</b></i> <i>marselinus.gender</i>
+          </p>
+          <div class="btn btn-outline-light" style="background-color: rgb(39, 73, 62)" onclick="show1()">tampilkan</div>
+          <p class="text-light" id="demo1"></p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+          <p class="text-light">
+            bisa juga menggunakan perintah <b><i>objectName["propertyName"]</i></b>
+          </p>
+          <div class="btn btn-outline-light" style="background-color: rgb(39, 73, 62)" onclick="show2()">tampilkan</div>
+          <p class="text-light" id="demo2"></p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+          <p class="text-light">
+            mengakses method object <i><b>objectName.methodName()</b></i>
+          </p>
+          <div class="btn btn-outline-light" style="background-color: rgb(39, 73, 62)" onclick="show3()">tampilkan</div>
+          <p class="text-light" id="demo3"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Display some data from the object:
+      // mendeklarasikan objek marselinus yang berisi beberapa properti serta methodnya
+      const marselinus = {
+        gender: "pria",
+        height: "167 cm",
+        asal: "Bajawa",
+        perkenalan: function () {
+          return "Marselinus adalah seorang " + this.gender + " memiliki tinggi badan " + this.height + " dan berasal dari " + this.asal;
+        },
+      };
+      //akhir deklarasi
+      //cara pertama mengakses properti object
+      function show1() {
+        document.getElementById("demo1").innerHTML = "Marselinus adalah seorang " + marselinus.gender;
+      }
+
+      //   cara lain mengakses properti objek
+      function show2() {
+        document.getElementById("demo2").innerHTML = "Marselinus adalah seorang " + marselinus["gender"];
+      }
+
+      //  ahir cara lain mengakses properti objek
+
+      //mengakses objek method
+      function show3() {
+        document.getElementById("demo3").innerHTML = marselinus.perkenalan();
+      }
+      //ahir mengakses objek method
+    </script>
+  </body>
+</html>

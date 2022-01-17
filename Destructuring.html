@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // destructuring array
+      const name = ["Marselinus", "Harson ", "rewo", "haris", "haron", "JOko"];
+      const [firstName, lastName, ...other] = name;
+      console.info(other);
+
+      // destructuring object
+      const person = {
+        namaDepan: "Marselinus",
+        namaAkhir: "Rewo",
+        address: {
+          street: "Jalan Gajah Mada",
+          city: "Bali",
+          country: "Indonesia",
+        },
+        hobby: "nonton anime",
+        favAnim: "Naruto",
+      };
+      const {
+        namaDepan,
+        namaAkhir,
+        address: { country, city, street },
+        ...next
+      } = person;
+      console.info(namaDepan);
+      console.info(namaAkhir);
+      console.info(city);
+      console.info(street);
+      console.info(next);
+
+      // destructuring function parameter :
+      function display({ depan, tengah, belakang }) {
+        console.info(depan);
+        console.info(tengah);
+        console.info(belakang);
+      }
+      const data = {
+        depan: "Marselinus",
+        tengah: "harson",
+        belakang: "rewo",
+      };
+      display(data);
+
+      //destructuring array:
+      {
+        function sum([a, b]) {
+          return a + b;
+        }
+        console.info(sum([1, 2]));
+        console.info(sum([2, 5]));
+      }
+
+      //   default value:
+      {
+        const names = ["marselinus", "Harson"];
+        const [firstName, middleName, lastName = "Rewo"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      //merubah nama variabel:
+
+      {
+        const person = {
+          namaDepan: "Marselinus",
+          namaTengah: "Harson",
+          namaAkhir: "Rewo",
+
+          address: {
+            street: "Jalan Gajah Mada",
+            city: "Bali",
+            country: "Indonesia",
+          },
+          hobby: "nonton anime",
+          favAnim: "Naruto",
+        };
+        let { namaDepan: firstName, namaTengah: middleName, namaAkhir: lastName } = person;
+        console.info(firstName);
+        console.info(lastName);
+        console.info(middleName);
+      }
+    </script>
+  </body>
+</html>
